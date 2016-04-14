@@ -1,0 +1,58 @@
+[user]
+  name =  Naoki Nakano
+  email = NakanoNaoki@next-group.jp
+
+[color]
+  ui = auto
+
+[push]
+  default = simple
+
+[core]
+  excludesfile = ~/.gitignore  # globalな.gitignoreの指定
+  editor = vim +1 -c 'set fenc=utf-8'
+  preloadindex = true
+
+[merge]
+  ff = false
+
+[rebase]
+  autosquash = true
+
+[alias]
+  st     = status --short --branch
+  ol     = log --oneline --graph
+  cl     = clone
+  co     = checkout
+  cm     = checkout master
+  cd     = checkout develop
+  br     = branch
+  ba     = branch -a
+  c      = commit
+  ci     = commit -v
+  fix    = commit --amend -v
+  fixa   = commit --amend -v -a
+  ca     = commit -v -a
+  aa     = add .
+  reh    = reset --hard
+  ri     = rebase -i
+  df     = diff
+  dc     = diff --cached
+  sh     = show
+  pl     = pull --ff
+  plr    = pull --rebase
+  ps     = push
+  psu    = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+  git    = !git
+  gr     = grep -I
+  fu     = fetch upstream
+  m      = merge
+
+[ghq]
+  root = ~/.ghq
+  root = ~/go/src
+  root = ~/.vim/bundle/
+
+[url "git@github.com:"]
+  pushinsteadof = "git://github.com/"
+  pushinsteadof = "https://github.com"

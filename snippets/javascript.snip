@@ -1,0 +1,33 @@
+snippet     use-strict
+options     head
+  "use strict";
+
+snippet     self_this
+abbr        var self = this;
+options     head
+  var self = this;
+
+snippet     done
+options     word
+  done(function (${1:data, status, xhr}) {
+    ${2}
+  })
+
+snippet     fail
+options     word
+  fail(function (${1:xhr, status, error}) {
+    ${2}
+  })
+
+snippet     f
+options     word
+  function (${1}) {
+    ${2}
+  }
+
+snippet     unless
+abbr        if(! ... ) {}
+options     head
+  if (!${1:cond}) {
+    ${0:TARGET}
+  }

@@ -1,0 +1,66 @@
+snippet     binding-pry
+abbr        binding.pry
+  binding.pry
+
+snippet     class-method
+abbr        class << self ...
+options     head
+  class << self
+    ${0}
+  end
+
+snippet     refine
+abbr        refine Klass do ... end
+options     head
+  refine ${1:#:CLASS} do
+    ${0}
+  end
+
+snippet     begin
+abbr        begin ... end
+options     head
+	begin
+		${1:#:code}
+	rescue
+		${2:#:code}
+	end
+
+snippet     exception
+abbr        class Error < StandardError; end
+options     head
+  class ${1:NAME} < ${1:StandardError}; end
+
+snippet     railsclass
+options     head
+  class `substitute(expand('%:t:r:r:r'), '\v%(^(.)|_(.))', '\u\1\u\2', 'g')` < ${1:ApplicationController}
+    ${2}
+  end
+
+snippet     yard-param
+abbr        @param [Type] ...
+options     head
+  # @param [${1:String}] ${2:NAME} ${3:#:DESC}
+
+snippet     yard-return
+abbr        @return [Type] ...
+options     head
+  # @return [${1:String}] ${3:#:DESC}
+
+snippet     yard-raise
+abbr        @raise [Type] ...
+options     head
+  # @raise [${1:StandardError}] ${3:#:DESC}
+
+snippet     define_method
+abbr        define_method() do...end
+  define_method(${1:name}) do
+    ${0}
+  end
+
+
+# ------------------------  override default snippets
+snippet     def
+abbr        def ... end
+  def ${1:initialize}
+    ${2:TARGET}
+  end
